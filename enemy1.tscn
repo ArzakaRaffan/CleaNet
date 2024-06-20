@@ -1,0 +1,222 @@
+[gd_scene load_steps=21 format=3 uid="uid://cjnkvpjexjqcj"]
+
+[ext_resource type="Script" path="res://enemy1.gd" id="1_mjnwg"]
+[ext_resource type="PackedScene" uid="uid://dvqfpr5lqve3y" path="res://soft_collision.tscn" id="3_8hio1"]
+[ext_resource type="Texture2D" uid="uid://cowksq2kx0ixk" path="res://Aset 1.PNG" id="3_cuki1"]
+[ext_resource type="AudioStream" uid="uid://daej7626y873x" path="res://Sound/enemy death.wav" id="4_bxlpn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pqgik"]
+size = Vector2(22, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vhjc6"]
+radius = 16.0032
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3ndtv"]
+radius = 5597.17
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67grp"]
+atlas = ExtResource("3_cuki1")
+region = Rect2(7, 99, 33, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpa4i"]
+atlas = ExtResource("3_cuki1")
+region = Rect2(37, 99, 33, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwi44"]
+atlas = ExtResource("3_cuki1")
+region = Rect2(68, 99, 33, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlmmh"]
+atlas = ExtResource("3_cuki1")
+region = Rect2(103, 99, 33, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_buhol"]
+atlas = ExtResource("3_cuki1")
+region = Rect2(10, 75, 29, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62bxc"]
+atlas = ExtResource("3_cuki1")
+region = Rect2(39, 75, 29, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3j80"]
+atlas = ExtResource("3_cuki1")
+region = Rect2(68, 75, 29, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xq63"]
+atlas = ExtResource("3_cuki1")
+region = Rect2(103, 75, 31, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sv23y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_67grp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gpa4i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwi44")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlmmh")
+}],
+"loop": true,
+"name": &"Dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_buhol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62bxc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3j80")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xq63")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_qnl67"]
+resource_name = "Dead"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("enemyAnim:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Dead"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("enemyAnim:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_prwda"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("enemyAnim:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Run"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("enemyAnim:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_48cxt"]
+resource_name = "Run"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("enemyAnim:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Run"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("enemyAnim:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h4jn4"]
+_data = {
+"Dead": SubResource("Animation_qnl67"),
+"RESET": SubResource("Animation_prwda"),
+"Run": SubResource("Animation_48cxt")
+}
+
+[node name="enemy1" type="CharacterBody2D"]
+collision_layer = 17
+collision_mask = 17
+script = ExtResource("1_mjnwg")
+
+[node name="enemy1Collision" type="CollisionShape2D" parent="."]
+position = Vector2(-23, 19)
+shape = SubResource("RectangleShape2D_pqgik")
+
+[node name="BulletDetection" type="Area2D" parent="."]
+scale = Vector2(0.843467, 1.13023)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BulletDetection"]
+position = Vector2(-27.2684, 16.8107)
+scale = Vector2(0.666757, 0.504699)
+shape = SubResource("CircleShape2D_vhjc6")
+
+[node name="SoftCollision" parent="." instance=ExtResource("3_8hio1")]
+position = Vector2(-23, 26)
+scale = Vector2(1.57698, 1)
+
+[node name="playerDetection" type="Area2D" parent="."]
+
+[node name="playerDetectionShape" type="CollisionShape2D" parent="playerDetection"]
+visible = false
+position = Vector2(-131, -40)
+shape = SubResource("CircleShape2D_3ndtv")
+
+[node name="enemyAnim" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-23, 19)
+scale = Vector2(1.44488, 1.5797)
+sprite_frames = SubResource("SpriteFrames_sv23y")
+animation = &"Run"
+
+[node name="animationEnemy" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_h4jn4")
+}
+autoplay = "Run"
+
+[node name="enemyDead" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_bxlpn")
+
+[connection signal="area_entered" from="BulletDetection" to="." method="_on_bullet_detection_area_entered"]
+[connection signal="body_entered" from="playerDetection" to="." method="_on_player_detection_body_entered"]

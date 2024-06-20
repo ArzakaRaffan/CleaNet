@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://df35eopt8ttl4"]
+
+[ext_resource type="Texture2D" uid="uid://c8ddjulwk626g" path="res://textPlaceHolder.png" id="1_s1g8g"]
+[ext_resource type="Texture2D" uid="uid://cgg82wvknggaf" path="res://mainScreenBG/CD63D0B2-1CDF-48D6-8DDD-71282B30CDF7.png" id="2_c84gf"]
+[ext_resource type="Texture2D" uid="uid://c1vpb813txc6i" path="res://credit.png" id="3_krxlg"]
+[ext_resource type="Texture2D" uid="uid://cewixco06ohbv" path="res://Button/B1BDB2EC-7EB5-4B78-B3E1-CF8E812436BC.png" id="4_p7og4"]
+[ext_resource type="Texture2D" uid="uid://cpvwef4bvp38t" path="res://Button/52EFE692-B73A-4BA8-A1A5-42A7542B1FF8.png" id="5_o2ub0"]
+
+[node name="creditMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bg" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.266667)
+layout_mode = 0
+offset_right = 570.0
+offset_bottom = 340.0
+color = Color(0, 0, 0, 1)
+
+[node name="TextPlaceHolder" type="Sprite2D" parent="."]
+position = Vector2(283, 169)
+texture = ExtResource("1_s1g8g")
+
+[node name="Cd63d0b2-1cdf-48d6-8ddd-71282b30cdf7" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(275, 188)
+scale = Vector2(1.16491, 1.2129)
+texture = ExtResource("2_c84gf")
+
+[node name="Credit" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(277, 219)
+scale = Vector2(1.1875, 1.51111)
+texture = ExtResource("3_krxlg")
+
+[node name="creditClose" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 488.0
+offset_top = 41.0
+offset_right = 531.0
+offset_bottom = 84.0
+texture_normal = ExtResource("4_p7og4")
+texture_pressed = ExtResource("5_o2ub0")

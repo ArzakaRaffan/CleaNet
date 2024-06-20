@@ -1,0 +1,208 @@
+[gd_scene load_steps=23 format=3 uid="uid://bht3dix56o0mw"]
+
+[ext_resource type="Script" path="res://enemydua.gd" id="1_oisvb"]
+[ext_resource type="Texture2D" uid="uid://cfnwnofoe50b" path="res://enemy2/IMG_4708.PNG" id="2_ufs74"]
+[ext_resource type="PackedScene" uid="uid://duurt7oc85qmx" path="res://soft_collision_2.tscn" id="3_0qjxo"]
+[ext_resource type="Texture2D" uid="uid://bft8ytat7orm" path="res://enemy2/IMG_4709.PNG" id="3_w74dn"]
+[ext_resource type="Texture2D" uid="uid://bhxprqtak0yy7" path="res://enemy2/IMG_4710.PNG" id="4_0is3j"]
+[ext_resource type="Texture2D" uid="uid://cgnjy4p8bbsci" path="res://enemy2/IMG_4711.PNG" id="5_hj1ab"]
+[ext_resource type="Texture2D" uid="uid://4ebb2entjvsn" path="res://enemy2/big Shoot/1.PNG" id="6_73nmg"]
+[ext_resource type="Texture2D" uid="uid://cuc6prjom3hwh" path="res://enemy2/Small Shoot/1.PNG" id="6_nfst4"]
+[ext_resource type="Texture2D" uid="uid://bvngx1its4ohm" path="res://enemy2/Small Shoot/4.PNG" id="7_orf7o"]
+[ext_resource type="Texture2D" uid="uid://jmpa3pq32bya" path="res://enemy2/big Shoot/2.PNG" id="7_sq0fr"]
+[ext_resource type="Texture2D" uid="uid://xlsb4o17mo4a" path="res://enemy2/big Shoot/3.PNG" id="8_3grsf"]
+[ext_resource type="Texture2D" uid="uid://s8su2f1vp6df" path="res://enemy2/Small Shoot/2.PNG" id="8_p25ha"]
+[ext_resource type="Texture2D" uid="uid://c3kch7equ33qs" path="res://enemy2/Small Shoot/3.PNG" id="9_gracg"]
+[ext_resource type="Texture2D" uid="uid://cdjpdt0botmnd" path="res://enemy2/big Shoot/4.PNG" id="9_mexgq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kpiyw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ufs74")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_w74dn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0is3j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hj1ab")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_nfst4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_orf7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_p25ha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_gracg")
+}],
+"loop": true,
+"name": &"Mati",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_73nmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_sq0fr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3grsf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mexgq")
+}],
+"loop": true,
+"name": &"Misah",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_644dj"]
+size = Vector2(37, 32.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_phkkv"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f0j60"]
+radius = 2903.05
+
+[sub_resource type="Animation" id="Animation_qqudc"]
+resource_name = "Mati"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("enemyduaAnim:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Mati"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("enemyduaAnim:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [2, 0, 3, 1]
+}
+
+[sub_resource type="Animation" id="Animation_qk4kf"]
+resource_name = "Misah"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("enemyduaAnim:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Misah"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("enemyduaAnim:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_md27l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("enemyduaAnim:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Misah"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("enemyduaAnim:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b3ytj"]
+_data = {
+"Mati": SubResource("Animation_qqudc"),
+"Misah": SubResource("Animation_qk4kf"),
+"RESET": SubResource("Animation_md27l")
+}
+
+[node name="enemydua" type="CharacterBody2D"]
+script = ExtResource("1_oisvb")
+
+[node name="enemyduaAnim" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 1.19209e-07)
+scale = Vector2(1.86332, 1.88477)
+sprite_frames = SubResource("SpriteFrames_kpiyw")
+animation = &"Misah"
+autoplay = "Idle"
+
+[node name="enemyduaColl" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -1.25)
+shape = SubResource("RectangleShape2D_644dj")
+
+[node name="bulletDetect" type="Area2D" parent="."]
+
+[node name="bulletDetectColl" type="CollisionShape2D" parent="bulletDetect"]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_phkkv")
+
+[node name="playerDetect" type="Area2D" parent="."]
+
+[node name="playerDetectColl" type="CollisionShape2D" parent="playerDetect"]
+visible = false
+shape = SubResource("CircleShape2D_f0j60")
+
+[node name="softCollision2" parent="." instance=ExtResource("3_0qjxo")]
+position = Vector2(0, 9)
+
+[node name="animEnemy2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_b3ytj")
+}
+
+[connection signal="enemy2Dead" from="." to="." method="_on_enemy_2_dead"]
+[connection signal="area_entered" from="bulletDetect" to="." method="_on_bullet_detect_area_entered"]
+[connection signal="body_entered" from="playerDetect" to="." method="_on_player_detect_body_entered"]

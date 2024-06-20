@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cokm4uhunfpdr"]
+
+[ext_resource type="Texture2D" uid="uid://uy5vp477hpep" path="res://icon.svg" id="1_cx7nw"]
+
+[sub_resource type="GDScript" id="GDScript_pt3cn"]
+script/source = "extends CharacterBody2D
+
+func _physics_process(delta):
+	var direction = Vector2.RIGHT.rotated(rotation)
+	position += direction * 1000 * delta
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gwjoc"]
+size = Vector2(38, 37.625)
+
+[node name="fireBullet" type="CharacterBody2D"]
+collision_layer = 9
+collision_mask = 9
+script = SubResource("GDScript_pt3cn")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(0.200005, -0.503998)
+scale = Vector2(0.3, 0.289)
+texture = ExtResource("1_cx7nw")
+
+[node name="fireBulletCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0.199997, -0.316498)
+shape = SubResource("RectangleShape2D_gwjoc")

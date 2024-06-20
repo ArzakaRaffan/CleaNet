@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmnd06wo262gp"]
+
+[ext_resource type="Texture2D" uid="uid://c8ddjulwk626g" path="res://textPlaceHolder.png" id="1_tcvad"]
+[ext_resource type="Texture2D" uid="uid://crm2maio6avex" path="res://how to play.png" id="2_3v0h5"]
+[ext_resource type="Texture2D" uid="uid://cewixco06ohbv" path="res://Button/B1BDB2EC-7EB5-4B78-B3E1-CF8E812436BC.png" id="3_ldje8"]
+[ext_resource type="Texture2D" uid="uid://cpvwef4bvp38t" path="res://Button/52EFE692-B73A-4BA8-A1A5-42A7542B1FF8.png" id="4_xh05j"]
+
+[node name="infoMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 570.0
+offset_bottom = 340.0
+color = Color(0, 0, 0, 0.266667)
+
+[node name="TextPlaceHolder" type="Sprite2D" parent="."]
+position = Vector2(283, 169)
+texture = ExtResource("1_tcvad")
+
+[node name="HowToPlay" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(288, 171.5)
+scale = Vector2(1.05695, 1.2905)
+texture = ExtResource("2_3v0h5")
+
+[node name="infoCloseButton" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 483.0
+offset_top = 43.0
+offset_right = 526.0
+offset_bottom = 86.0
+texture_normal = ExtResource("3_ldje8")
+texture_pressed = ExtResource("4_xh05j")

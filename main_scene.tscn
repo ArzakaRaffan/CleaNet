@@ -1,0 +1,730 @@
+[gd_scene load_steps=35 format=3 uid="uid://iwwpkiyiye6v"]
+
+[ext_resource type="Script" path="res://main_scene.gd" id="1_c3b7o"]
+[ext_resource type="Texture2D" uid="uid://qlac3ai5jwl5" path="res://Bg 1.PNG" id="2_4176q"]
+[ext_resource type="Script" path="res://player_character.gd" id="2_t27em"]
+[ext_resource type="Texture2D" uid="uid://cowksq2kx0ixk" path="res://Aset 1.PNG" id="3_op5nl"]
+[ext_resource type="Texture2D" uid="uid://bc3klib8esw4e" path="res://Bg 2.PNG" id="3_oqcew"]
+[ext_resource type="Texture2D" uid="uid://pesavg42c8g7" path="res://Bg 3.PNG" id="4_iah7u"]
+[ext_resource type="Script" path="res://ScoreUI.gd" id="5_d8ci5"]
+[ext_resource type="Texture2D" uid="uid://dula0l6i2ywg6" path="res://Bg 4.PNG" id="5_pon75"]
+[ext_resource type="FontFile" uid="uid://u7r3471psc0f" path="res://press-start/prstartk.ttf" id="5_wmixy"]
+[ext_resource type="AudioStream" uid="uid://tpwhfngk3pw3" path="res://Sound/enemydead.wav" id="6_snbxx"]
+[ext_resource type="AudioStream" uid="uid://c5ieamidw1cie" path="res://Sound/game over.wav" id="7_680wj"]
+[ext_resource type="Script" path="res://HighScore.gd" id="7_qg8ib"]
+[ext_resource type="AudioStream" uid="uid://2bsw2nwlyiwm" path="res://Sound/shoot.mp3" id="7_ye8gc"]
+[ext_resource type="Script" path="res://PausedUI.gd" id="8_shgea"]
+[ext_resource type="Texture2D" uid="uid://cy81jh1wqv6ki" path="res://MC/1.PNG" id="8_t20aq"]
+[ext_resource type="FontFile" uid="uid://d2iu1skasybo4" path="res://press-start/prstart.ttf" id="9_pbhjn"]
+[ext_resource type="Texture2D" uid="uid://dgdgco0lcs2gu" path="res://MC/2.PNG" id="9_w15rv"]
+[ext_resource type="Texture2D" uid="uid://bbia5m8jwbxfv" path="res://MC/3.PNG" id="10_v7i3q"]
+[ext_resource type="Texture2D" uid="uid://b3cqqt2fnqpju" path="res://pause-xxl.png" id="11_aut5j"]
+[ext_resource type="Texture2D" uid="uid://v765k7wyi4y5" path="res://MC/4.PNG" id="11_c8qsq"]
+[ext_resource type="Texture2D" uid="uid://0vmatk2v5068" path="res://MC/5.PNG" id="12_soib1"]
+[ext_resource type="Texture2D" uid="uid://cujuoveoo8qyr" path="res://MC/6.PNG" id="13_6u8og"]
+[ext_resource type="Texture2D" uid="uid://bf5hxodt6u5u7" path="res://Border/Normal.png" id="20_hv50a"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_414b8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4176q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_oqcew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_iah7u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pon75")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j2pk8"]
+size = Vector2(33.5, 29.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g36db"]
+atlas = ExtResource("3_op5nl")
+region = Rect2(0, 0, 46, 53)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1y75g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g36db")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_t20aq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_w15rv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_v7i3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_c8qsq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_soib1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_6u8og")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_5fxs8"]
+resource_name = "Idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("playerAnim:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("playerAnim:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_l84aq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("playerAnim:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("playerAnim:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_bhtuj"]
+resource_name = "Walk"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("playerAnim:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Walk"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("playerAnim:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5rxxh"]
+_data = {
+"Idle": SubResource("Animation_5fxs8"),
+"RESET": SubResource("Animation_l84aq"),
+"Walk": SubResource("Animation_bhtuj")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_01niu"]
+size = Vector2(4.99037, 298)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a0gg5"]
+size = Vector2(295.469, 5.24923)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpohb"]
+size = Vector2(569, 4.5)
+
+[node name="MainScene" type="Node2D"]
+script = ExtResource("1_c3b7o")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 46.0
+scale = Vector2(14.4924, 7.51364)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="gameBg" type="Node2D" parent="."]
+
+[node name="bgAnim" type="AnimatedSprite2D" parent="gameBg"]
+texture_filter = 1
+position = Vector2(282, 175.5)
+scale = Vector2(0.968421, 0.983871)
+sprite_frames = SubResource("SpriteFrames_414b8")
+autoplay = "default"
+frame = 3
+frame_progress = 0.85781
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(3.5, 16.5423)
+scale = Vector2(0.131579, 0.496743)
+color = Color(0.337255, 0.262745, 0.992157, 1)
+polygon = PackedVector2Array(19, 13, 19, 627, 57, 627, 57, 144.785, 57, 13)
+
+[node name="enemydeath" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_snbxx")
+
+[node name="deadSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_680wj")
+volume_db = 10.0
+
+[node name="playerCharacter" type="CharacterBody2D" parent="."]
+texture_filter = 1
+position = Vector2(82, 184)
+script = ExtResource("2_t27em")
+
+[node name="shootSound" type="AudioStreamPlayer" parent="playerCharacter"]
+stream = ExtResource("7_ye8gc")
+volume_db = -20.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="playerCharacter"]
+texture_filter = 1
+position = Vector2(-33, -16)
+scale = Vector2(0.517579, 0.439453)
+polygon = PackedVector2Array(33, 1, 30, 3, 27, 7, 27, 59, 30, 63, 33, 65, 85, 65, 89, 62, 91, 59, 91, 8, 89, 4, 85, 1)
+
+[node name="gunEndPoint" type="Marker2D" parent="playerCharacter"]
+position = Vector2(25, -2)
+scale = Vector2(0.15, 0.15)
+
+[node name="Enemydetect" type="Area2D" parent="playerCharacter"]
+position = Vector2(-164, -182)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="playerCharacter/Enemydetect"]
+position = Vector2(163.25, 181.25)
+shape = SubResource("RectangleShape2D_j2pk8")
+
+[node name="playerAnim" type="AnimatedSprite2D" parent="playerCharacter"]
+position = Vector2(3.8147e-06, -1.90735e-06)
+rotation = -1.5708
+scale = Vector2(1.01302, 0.896922)
+sprite_frames = SubResource("SpriteFrames_1y75g")
+animation = &"Idle"
+
+[node name="animPlayer" type="AnimationPlayer" parent="playerCharacter"]
+libraries = {
+"": SubResource("AnimationLibrary_5rxxh")
+}
+
+[node name="arenaLimit" type="Area2D" parent="."]
+visible = false
+position = Vector2(21, 12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arenaLimit"]
+position = Vector2(-8.49519, 164)
+shape = SubResource("RectangleShape2D_01niu")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="arenaLimit"]
+position = Vector2(546, 170)
+shape = SubResource("RectangleShape2D_01niu")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(572, 173)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_a0gg5")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(8.74965, 175.281)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_a0gg5")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(290.5, 25)
+shape = SubResource("RectangleShape2D_kpohb")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(288, 326)
+shape = SubResource("RectangleShape2D_kpohb")
+
+[node name="User Interface" type="CanvasLayer" parent="."]
+
+[node name="ScoreUI" type="Control" parent="User Interface"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 13.0
+offset_top = 8.0
+offset_right = 161.0
+offset_bottom = 20.0
+script = ExtResource("5_d8ci5")
+metadata/_edit_use_anchors_ = true
+
+[node name="Score" type="Label" parent="User Interface/ScoreUI"]
+z_index = 1
+texture_filter = 1
+layout_mode = 0
+offset_left = -2.0
+offset_right = 1998.0
+offset_bottom = 400.0
+scale = Vector2(0.05, 0.05)
+theme_override_fonts/font = ExtResource("5_wmixy")
+theme_override_font_sizes/font_size = 200
+text = "SCORE:"
+metadata/_edit_use_anchors_ = true
+
+[node name="HighScore" type="Control" parent="User Interface"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = 364.0
+offset_top = 8.0
+offset_right = 512.0
+offset_bottom = 20.0
+script = ExtResource("7_qg8ib")
+metadata/_edit_use_anchors_ = true
+
+[node name="HighScore" type="Label" parent="User Interface/HighScore"]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.447
+anchor_top = 1.0
+anchor_right = 0.447
+anchor_bottom = 1.0
+offset_left = -28.156
+offset_top = -12.0
+offset_right = 2171.84
+offset_bottom = 388.0
+scale = Vector2(0.05, 0.05)
+theme_override_fonts/font = ExtResource("5_wmixy")
+theme_override_font_sizes/font_size = 200
+text = "HIGH SCORE:"
+metadata/_edit_use_anchors_ = true
+
+[node name="PauseUI" type="Control" parent="User Interface"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Pause Button" type="Button" parent="User Interface/PauseUI"]
+z_index = 1
+layout_mode = 0
+offset_left = 281.0
+offset_top = -2.0
+offset_right = 545.0
+offset_bottom = 384.0
+scale = Vector2(0.06, 0.062)
+theme_override_colors/font_color = Color(0.894118, 0.752941, 0.839216, 1)
+icon = ExtResource("11_aut5j")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="arenaLimitAtasBawah" type="Area2D" parent="."]
+visible = false
+position = Vector2(21, 12)
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="arenaLimitAtasBawah"]
+position = Vector2(141, 18)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_01niu")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="arenaLimitAtasBawah"]
+position = Vector2(400, 18)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_01niu")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="arenaLimitAtasBawah"]
+position = Vector2(394, 309)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_01niu")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="arenaLimitAtasBawah"]
+position = Vector2(140, 309)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_01niu")
+
+[node name="pausedMenu" type="Control" parent="."]
+process_mode = 2
+visible = false
+z_index = 6
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PausedUI" type="Control" parent="pausedMenu"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("8_shgea")
+
+[node name="ColorRect" type="ColorRect" parent="pausedMenu/PausedUI"]
+layout_mode = 0
+offset_right = 580.0
+offset_bottom = 346.0
+color = Color(0, 0, 0, 0.392157)
+
+[node name="PausedLabel" type="Label" parent="pausedMenu/PausedUI"]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 74.0
+offset_right = 1138.0
+offset_bottom = 225.0
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("9_pbhjn")
+theme_override_font_sizes/font_size = 150
+text = "PAUSED"
+
+[node name="Continue Button" type="Button" parent="pausedMenu/PausedUI"]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 156.0
+offset_right = 1148.0
+offset_bottom = 436.0
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("9_pbhjn")
+theme_override_font_sizes/font_size = 100
+text = "CONTINUE"
+
+[node name="Quit Button" type="Button" parent="pausedMenu/PausedUI"]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 209.0
+offset_right = 1148.0
+offset_bottom = 489.0
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("9_pbhjn")
+theme_override_font_sizes/font_size = 100
+text = "QUIT"
+
+[node name="Score" type="Label" parent="pausedMenu/PausedUI"]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 106.0
+offset_right = 2428.0
+offset_bottom = 509.0
+scale = Vector2(0.05, 0.05)
+theme_override_fonts/font = ExtResource("5_wmixy")
+theme_override_font_sizes/font_size = 200
+text = "Your Score:
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Kiri" type="Node2D" parent="."]
+position = Vector2(-562, 1)
+metadata/_edit_group_ = true
+
+[node name="Normal10" type="Sprite2D" parent="Kiri"]
+texture_filter = 1
+position = Vector2(573, 47)
+texture = ExtResource("20_hv50a")
+
+[node name="Normal11" type="Sprite2D" parent="Kiri"]
+texture_filter = 1
+position = Vector2(573, 78)
+texture = ExtResource("20_hv50a")
+
+[node name="Normal12" type="Sprite2D" parent="Kiri"]
+texture_filter = 1
+position = Vector2(573, 304)
+texture = ExtResource("20_hv50a")
+
+[node name="Normal13" type="Sprite2D" parent="Kiri"]
+texture_filter = 1
+position = Vector2(573, 111)
+texture = ExtResource("20_hv50a")
+
+[node name="Normal14" type="Sprite2D" parent="Kiri"]
+texture_filter = 1
+position = Vector2(573, 146)
+texture = ExtResource("20_hv50a")
+
+[node name="Normal15" type="Sprite2D" parent="Kiri"]
+texture_filter = 1
+position = Vector2(573, 179)
+texture = ExtResource("20_hv50a")
+
+[node name="Normal16" type="Sprite2D" parent="Kiri"]
+texture_filter = 1
+position = Vector2(573, 211)
+texture = ExtResource("20_hv50a")
+
+[node name="Normal17" type="Sprite2D" parent="Kiri"]
+texture_filter = 1
+position = Vector2(573, 241)
+texture = ExtResource("20_hv50a")
+
+[node name="Normal18" type="Sprite2D" parent="Kiri"]
+texture_filter = 1
+position = Vector2(573, 273)
+texture = ExtResource("20_hv50a")
+
+[node name="kanan" type="Node2D" parent="."]
+position = Vector2(-10, 1)
+metadata/_edit_group_ = true
+
+[node name="Normal" type="Sprite2D" parent="kanan"]
+texture_filter = 1
+position = Vector2(573, 47)
+texture = ExtResource("20_hv50a")
+
+[node name="Normal8" type="Sprite2D" parent="kanan"]
+texture_filter = 1
+position = Vector2(573, 78)
+texture = ExtResource("20_hv50a")
+
+[node name="Normal9" type="Sprite2D" parent="kanan"]
+texture_filter = 1
+position = Vector2(573, 304)
+texture = ExtResource("20_hv50a")
+
+[node name="Normal2" type="Sprite2D" parent="kanan"]
+texture_filter = 1
+position = Vector2(573, 111)
+texture = ExtResource("20_hv50a")
+
+[node name="Normal3" type="Sprite2D" parent="kanan"]
+texture_filter = 1
+position = Vector2(573, 146)
+texture = ExtResource("20_hv50a")
+
+[node name="Normal4" type="Sprite2D" parent="kanan"]
+texture_filter = 1
+position = Vector2(573, 179)
+texture = ExtResource("20_hv50a")
+
+[node name="Normal5" type="Sprite2D" parent="kanan"]
+texture_filter = 1
+position = Vector2(573, 211)
+texture = ExtResource("20_hv50a")
+
+[node name="Normal6" type="Sprite2D" parent="kanan"]
+texture_filter = 1
+position = Vector2(573, 241)
+texture = ExtResource("20_hv50a")
+
+[node name="Normal7" type="Sprite2D" parent="kanan"]
+texture_filter = 1
+position = Vector2(573, 273)
+texture = ExtResource("20_hv50a")
+
+[node name="bawah" type="Node2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="Normal15" type="Sprite2D" parent="bawah"]
+texture_filter = 1
+position = Vector2(545.494, 27)
+rotation = 1.5708
+scale = Vector2(1, 0.814107)
+texture = ExtResource("20_hv50a")
+
+[node name="Normal16" type="Sprite2D" parent="bawah"]
+texture_filter = 1
+position = Vector2(513, 27)
+rotation = 1.5708
+texture = ExtResource("20_hv50a")
+
+[node name="Normal17" type="Sprite2D" parent="bawah"]
+texture_filter = 1
+position = Vector2(476, 27)
+rotation = 1.5708
+texture = ExtResource("20_hv50a")
+
+[node name="Normal18" type="Sprite2D" parent="bawah"]
+texture_filter = 1
+position = Vector2(440, 27)
+rotation = 1.5708
+texture = ExtResource("20_hv50a")
+
+[node name="Normal19" type="Sprite2D" parent="bawah"]
+texture_filter = 1
+position = Vector2(406, 27)
+rotation = 1.5708
+texture = ExtResource("20_hv50a")
+
+[node name="Normal20" type="Sprite2D" parent="bawah"]
+texture_filter = 1
+position = Vector2(366, 27)
+rotation = 1.5708
+texture = ExtResource("20_hv50a")
+
+[node name="Normal21" type="Sprite2D" parent="bawah"]
+texture_filter = 1
+position = Vector2(324, 27)
+rotation = 1.5708
+texture = ExtResource("20_hv50a")
+
+[node name="Normal22" type="Sprite2D" parent="bawah"]
+texture_filter = 1
+position = Vector2(279, 27)
+rotation = 1.5708
+texture = ExtResource("20_hv50a")
+
+[node name="Normal23" type="Sprite2D" parent="bawah"]
+texture_filter = 1
+position = Vector2(236, 27)
+rotation = 1.5708
+texture = ExtResource("20_hv50a")
+
+[node name="Normal24" type="Sprite2D" parent="bawah"]
+texture_filter = 1
+position = Vector2(197, 27)
+rotation = 1.5708
+texture = ExtResource("20_hv50a")
+
+[node name="Normal25" type="Sprite2D" parent="bawah"]
+texture_filter = 1
+position = Vector2(154, 27)
+rotation = 1.5708
+texture = ExtResource("20_hv50a")
+
+[node name="Normal26" type="Sprite2D" parent="bawah"]
+texture_filter = 1
+position = Vector2(116, 27)
+rotation = 1.5708
+texture = ExtResource("20_hv50a")
+
+[node name="Normal27" type="Sprite2D" parent="bawah"]
+texture_filter = 1
+position = Vector2(72, 27)
+rotation = 1.5708
+texture = ExtResource("20_hv50a")
+
+[node name="Normal28" type="Sprite2D" parent="bawah"]
+texture_filter = 1
+position = Vector2(31, 27)
+rotation = 1.5708
+texture = ExtResource("20_hv50a")
+
+[node name="atas" type="Node2D" parent="."]
+position = Vector2(552, 327)
+rotation = 1.5708
+metadata/_edit_group_ = true
+
+[node name="Normal14" type="Sprite2D" parent="atas"]
+texture_filter = 1
+position = Vector2(0, 6.48921)
+scale = Vector2(1, 0.814594)
+texture = ExtResource("20_hv50a")
+
+[node name="Normal13" type="Sprite2D" parent="atas"]
+texture_filter = 1
+position = Vector2(1.90735e-06, 39)
+texture = ExtResource("20_hv50a")
+
+[node name="Normal12" type="Sprite2D" parent="atas"]
+texture_filter = 1
+position = Vector2(3.8147e-06, 76)
+texture = ExtResource("20_hv50a")
+
+[node name="Normal11" type="Sprite2D" parent="atas"]
+texture_filter = 1
+position = Vector2(5.72205e-06, 112)
+texture = ExtResource("20_hv50a")
+
+[node name="Normal10" type="Sprite2D" parent="atas"]
+texture_filter = 1
+position = Vector2(7.62939e-06, 146)
+texture = ExtResource("20_hv50a")
+
+[node name="Normal9" type="Sprite2D" parent="atas"]
+texture_filter = 1
+position = Vector2(9.53674e-06, 186)
+texture = ExtResource("20_hv50a")
+
+[node name="Normal8" type="Sprite2D" parent="atas"]
+texture_filter = 1
+position = Vector2(1.14441e-05, 228)
+texture = ExtResource("20_hv50a")
+
+[node name="Normal7" type="Sprite2D" parent="atas"]
+texture_filter = 1
+position = Vector2(1.33514e-05, 273)
+texture = ExtResource("20_hv50a")
+
+[node name="Normal6" type="Sprite2D" parent="atas"]
+texture_filter = 1
+position = Vector2(1.52588e-05, 316)
+texture = ExtResource("20_hv50a")
+
+[node name="Normal3" type="Sprite2D" parent="atas"]
+texture_filter = 1
+position = Vector2(1.52588e-05, 355)
+texture = ExtResource("20_hv50a")
+
+[node name="Normal5" type="Sprite2D" parent="atas"]
+texture_filter = 1
+position = Vector2(1.71661e-05, 398)
+texture = ExtResource("20_hv50a")
+
+[node name="Normal4" type="Sprite2D" parent="atas"]
+texture_filter = 1
+position = Vector2(1.90735e-05, 436)
+texture = ExtResource("20_hv50a")
+
+[node name="Normal2" type="Sprite2D" parent="atas"]
+texture_filter = 1
+position = Vector2(2.09808e-05, 480)
+texture = ExtResource("20_hv50a")
+
+[node name="Normal" type="Sprite2D" parent="atas"]
+texture_filter = 1
+position = Vector2(2.28882e-05, 521)
+texture = ExtResource("20_hv50a")
+
+[connection signal="player_dead" from="playerCharacter" to="." method="_on_player_character_player_dead"]
+[connection signal="body_entered" from="playerCharacter/Enemydetect" to="playerCharacter" method="_on_enemydetect_body_entered"]
+[connection signal="area_entered" from="arenaLimit" to="." method="_on_arena_limit_area_entered"]
+[connection signal="body_entered" from="arenaLimit" to="." method="_on_arena_limit_body_entered"]
+[connection signal="mouse_entered" from="arenaLimit" to="." method="_on_arena_limit_mouse_entered"]
+[connection signal="pressed" from="User Interface/PauseUI/Pause Button" to="." method="pause"]
+[connection signal="area_entered" from="arenaLimitAtasBawah" to="." method="_on_arena_limit_atas_bawah_area_entered"]
+[connection signal="pressed" from="pausedMenu/PausedUI/Continue Button" to="." method="unpause"]
+[connection signal="pressed" from="pausedMenu/PausedUI/Quit Button" to="." method="_on_quit_button_pressed"]

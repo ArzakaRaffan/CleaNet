@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://bcwirw7veiwjs"]
+
+[ext_resource type="Texture2D" uid="uid://c8ddjulwk626g" path="res://textPlaceHolder.png" id="1_pc70d"]
+[ext_resource type="Texture2D" uid="uid://cv3iviw4jblf6" path="res://Button/verif/D5AAF7D4-1164-4FFE-B678-350C94FDB3D0.png" id="2_j0jr8"]
+[ext_resource type="Texture2D" uid="uid://c60gte2oohfaw" path="res://Button/verif/4C95D4A9-C569-4C99-849D-FEB54CD3A41B.png" id="3_nlbce"]
+[ext_resource type="Texture2D" uid="uid://cewixco06ohbv" path="res://Button/B1BDB2EC-7EB5-4B78-B3E1-CF8E812436BC.png" id="4_dtrbt"]
+[ext_resource type="Texture2D" uid="uid://cpvwef4bvp38t" path="res://Button/52EFE692-B73A-4BA8-A1A5-42A7542B1FF8.png" id="5_u4og6"]
+[ext_resource type="Texture2D" uid="uid://c3nlxim3utsl8" path="res://mainScreenBG/Game Code.png" id="6_40dhr"]
+[ext_resource type="FontFile" uid="uid://d2iu1skasybo4" path="res://press-start/prstart.ttf" id="7_0m3sp"]
+
+[node name="inputCodeMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bg" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.266667)
+layout_mode = 0
+offset_right = 570.0
+offset_bottom = 340.0
+color = Color(0, 0, 0, 1)
+
+[node name="TextPlaceHolder" type="Sprite2D" parent="."]
+position = Vector2(283, 169)
+texture = ExtResource("1_pc70d")
+
+[node name="verifButton" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 219.0
+offset_top = 223.0
+offset_right = 346.0
+offset_bottom = 266.0
+texture_normal = ExtResource("2_j0jr8")
+texture_pressed = ExtResource("3_nlbce")
+
+[node name="inputCloseButton" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 483.0
+offset_top = 43.0
+offset_right = 526.0
+offset_bottom = 86.0
+texture_normal = ExtResource("4_dtrbt")
+texture_pressed = ExtResource("5_u4og6")
+
+[node name="GameCode" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(282, 110)
+texture = ExtResource("6_40dhr")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 160.0
+offset_right = 388.0
+offset_bottom = 192.0
+color = Color(0, 0, 0, 0.592157)
+
+[node name="LineEdit" type="LineEdit" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 174.0
+offset_top = 161.0
+offset_right = 389.0
+offset_bottom = 193.0
+theme_override_fonts/font = ExtResource("7_0m3sp")
+theme_override_font_sizes/font_size = 11
+placeholder_text = "ENTER YOUR CODE.."
+alignment = 1

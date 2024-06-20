@@ -1,0 +1,90 @@
+[gd_scene load_steps=9 format=3 uid="uid://cegf5oisl3jfd"]
+
+[ext_resource type="Script" path="res://end_game.gd" id="1_8lfph"]
+[ext_resource type="Texture2D" uid="uid://qlac3ai5jwl5" path="res://Bg 1.PNG" id="2_4dvl1"]
+[ext_resource type="FontFile" uid="uid://d2iu1skasybo4" path="res://press-start/prstart.ttf" id="2_8312e"]
+[ext_resource type="Texture2D" uid="uid://bc3klib8esw4e" path="res://Bg 2.PNG" id="3_pcxj2"]
+[ext_resource type="Texture2D" uid="uid://pesavg42c8g7" path="res://Bg 3.PNG" id="4_1d7bd"]
+[ext_resource type="Texture2D" uid="uid://dula0l6i2ywg6" path="res://Bg 4.PNG" id="5_ongmw"]
+[ext_resource type="AudioStream" uid="uid://c5ieamidw1cie" path="res://Sound/game over.wav" id="7_i0ekn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8kt8e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4dvl1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pcxj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1d7bd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ongmw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="endGame" type="Node2D"]
+script = ExtResource("1_8lfph")
+
+[node name="gameOverBG" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.392157)
+texture_filter = 1
+position = Vector2(285, 170)
+scale = Vector2(0.999998, 1.09677)
+sprite_frames = SubResource("SpriteFrames_8kt8e")
+autoplay = "default"
+frame = 2
+frame_progress = 0.840641
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = 216.0
+offset_top = 85.0
+offset_right = 360.0
+offset_bottom = 108.0
+theme_override_fonts/font = ExtResource("2_8312e")
+text = "GAME OVER
+"
+
+[node name="endScore2" type="Label" parent="."]
+texture_filter = 1
+offset_left = 216.0
+offset_top = 117.0
+offset_right = 741.0
+offset_bottom = 193.0
+scale = Vector2(0.25, 0.25)
+theme_override_fonts/font = ExtResource("2_8312e")
+theme_override_font_sizes/font_size = 65
+text = "SCORE: "
+
+[node name="tryAgainButton" type="Button" parent="."]
+offset_left = 223.0
+offset_top = 157.0
+offset_right = 477.0
+offset_bottom = 229.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("2_8312e")
+theme_override_font_sizes/font_size = 25
+text = "TRY AGAIN"
+
+[node name="exitButton" type="Button" parent="."]
+offset_left = 241.0
+offset_top = 201.0
+offset_right = 423.0
+offset_bottom = 271.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("2_8312e")
+theme_override_font_sizes/font_size = 25
+text = "EXIT
+"
+
+[node name="deadSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_i0ekn")
+
+[connection signal="pressed" from="tryAgainButton" to="." method="_on_try_again_button_pressed"]
+[connection signal="pressed" from="exitButton" to="." method="_on_exit_button_pressed"]

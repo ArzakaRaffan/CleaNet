@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://4au6c12qwc6y"]
+
+[ext_resource type="Texture2D" uid="uid://qlac3ai5jwl5" path="res://Bg 1.PNG" id="1_ixg2s"]
+[ext_resource type="Texture2D" uid="uid://bc3klib8esw4e" path="res://Bg 2.PNG" id="2_8l5yw"]
+[ext_resource type="Texture2D" uid="uid://pesavg42c8g7" path="res://Bg 3.PNG" id="3_re10o"]
+[ext_resource type="Texture2D" uid="uid://dula0l6i2ywg6" path="res://Bg 4.PNG" id="4_24n66"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_414b8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ixg2s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8l5yw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_re10o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_24n66")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.5
+}]
+
+[node name="gameBg" type="Node2D"]
+
+[node name="bgAnim" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(295.5, 175)
+scale = Vector2(0.998246, 1.06452)
+sprite_frames = SubResource("SpriteFrames_414b8")
+autoplay = "default"
+frame = 1
+frame_progress = 0.677262

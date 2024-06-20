@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7kal5pvm56p8"]
+
+[ext_resource type="Script" path="res://Bullet.gd" id="1_utbe1"]
+[ext_resource type="Texture2D" uid="uid://cowksq2kx0ixk" path="res://Aset 1.PNG" id="2_e5mjl"]
+
+[node name="Bullet" type="Area2D"]
+position = Vector2(35, 36)
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("1_utbe1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0.293907, -1.38289)
+rotation = 1.5708
+scale = Vector2(0.648732, 0.437505)
+polygon = PackedVector2Array(1, -20, -6, -13, -6, 17, 8, 17, 8, -13)
+
+[node name="Aset1" type="Sprite2D" parent="."]
+position = Vector2(1.33814, 0.14598)
+rotation = -1.5708
+scale = Vector2(2.16992, 2.72715)
+texture = ExtResource("2_e5mjl")
+region_enabled = true
+region_rect = Rect2(20.9298, 64.4586, 5.85137, 6.35145)
