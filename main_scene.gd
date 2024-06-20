@@ -17,6 +17,7 @@ func _ready():
 	previous_score = Global.score  # Initialize the previous score
 
 func _process(delta):
+	print(get_viewport().get_mouse_position())
 	# Check if the score has changed
 	if Global.score != previous_score:
 		enemydeath.play()
@@ -25,12 +26,12 @@ func _process(delta):
 func _on_arena_limit_area_entered(area):
 	if area.name == "Bullet" or area.name.begins_with("@Area2D@"):
 		var bullet_position = area.global_position
-		var randomY = randf_range(0, 130)
+		var randomY = randf_range(0, 120)
 		area.queue_free()
 		
-		if bullet_position.y < 180:
+		if bullet_position.y < 175:
 			bullet_position += Vector2(0, randomY)
-		elif bullet_position.y > 180:
+		elif bullet_position.y > 175:
 			bullet_position -= Vector2(0, randomY)
 		
 		bullet_position = clamp_position(bullet_position)
@@ -39,7 +40,7 @@ func _on_arena_limit_area_entered(area):
 func _on_arena_limit_atas_bawah_area_entered(area):
 	if area.name == "Bullet" or area.name.begins_with("@Area2D@"):
 		var bullet_position = area.global_position
-		var randomX = randf_range(0, 250)
+		var randomX = randf_range(0, 245)
 		area.queue_free()
 		
 		if bullet_position.x < 285:

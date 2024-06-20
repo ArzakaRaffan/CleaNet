@@ -45,7 +45,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j2pk8"]
-size = Vector2(33.5, 29.5)
+size = Vector2(36, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g36db"]
 atlas = ExtResource("3_op5nl")
@@ -176,7 +176,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_01niu"]
-size = Vector2(4.99037, 298)
+size = Vector2(4.49518, 262)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a0gg5"]
 size = Vector2(295.469, 5.24923)
@@ -188,6 +188,7 @@ size = Vector2(569, 4.5)
 script = ExtResource("1_c3b7o")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+texture_filter = 1
 offset_right = 40.0
 offset_bottom = 46.0
 scale = Vector2(14.4924, 7.51364)
@@ -195,6 +196,7 @@ color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="gameBg" type="Node2D" parent="."]
+texture_filter = 1
 
 [node name="bgAnim" type="AnimatedSprite2D" parent="gameBg"]
 texture_filter = 1
@@ -241,10 +243,11 @@ scale = Vector2(0.15, 0.15)
 position = Vector2(-164, -182)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="playerCharacter/Enemydetect"]
-position = Vector2(163.25, 181.25)
+position = Vector2(162, 181)
 shape = SubResource("RectangleShape2D_j2pk8")
 
 [node name="playerAnim" type="AnimatedSprite2D" parent="playerCharacter"]
+texture_filter = 1
 position = Vector2(3.8147e-06, -1.90735e-06)
 rotation = -1.5708
 scale = Vector2(1.01302, 0.896922)
@@ -257,15 +260,14 @@ libraries = {
 }
 
 [node name="arenaLimit" type="Area2D" parent="."]
-visible = false
 position = Vector2(21, 12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="arenaLimit"]
-position = Vector2(-8.49519, 164)
+position = Vector2(-1, 164)
 shape = SubResource("RectangleShape2D_01niu")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="arenaLimit"]
-position = Vector2(546, 170)
+position = Vector2(528, 163)
 shape = SubResource("RectangleShape2D_01niu")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -364,26 +366,25 @@ flat = true
 metadata/_edit_use_anchors_ = true
 
 [node name="arenaLimitAtasBawah" type="Area2D" parent="."]
-visible = false
 position = Vector2(21, 12)
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="arenaLimitAtasBawah"]
-position = Vector2(141, 18)
+position = Vector2(135, 26)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_01niu")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="arenaLimitAtasBawah"]
-position = Vector2(400, 18)
+position = Vector2(398, 25.7524)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_01niu")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="arenaLimitAtasBawah"]
-position = Vector2(394, 309)
+position = Vector2(393, 301)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_01niu")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="arenaLimitAtasBawah"]
-position = Vector2(140, 309)
+position = Vector2(135, 301)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_01niu")
 
@@ -415,31 +416,31 @@ offset_left = 238.0
 offset_top = 74.0
 offset_right = 1138.0
 offset_bottom = 225.0
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.01, 0.01)
 theme_override_fonts/font = ExtResource("9_pbhjn")
-theme_override_font_sizes/font_size = 150
+theme_override_font_sizes/font_size = 1500
 text = "PAUSED"
 
 [node name="Continue Button" type="Button" parent="pausedMenu/PausedUI"]
 layout_mode = 0
 offset_left = 238.0
 offset_top = 156.0
-offset_right = 1148.0
-offset_bottom = 436.0
-scale = Vector2(0.1, 0.1)
+offset_right = 2038.0
+offset_bottom = 856.0
+scale = Vector2(0.05, 0.05)
 theme_override_fonts/font = ExtResource("9_pbhjn")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 200
 text = "CONTINUE"
 
 [node name="Quit Button" type="Button" parent="pausedMenu/PausedUI"]
 layout_mode = 0
 offset_left = 238.0
-offset_top = 209.0
-offset_right = 1148.0
-offset_bottom = 489.0
-scale = Vector2(0.1, 0.1)
+offset_top = 205.0
+offset_right = 2038.0
+offset_bottom = 865.0
+scale = Vector2(0.05, 0.05)
 theme_override_fonts/font = ExtResource("9_pbhjn")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 200
 text = "QUIT"
 
 [node name="Score" type="Label" parent="pausedMenu/PausedUI"]

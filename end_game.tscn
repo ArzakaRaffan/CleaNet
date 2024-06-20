@@ -43,43 +43,45 @@ frame_progress = 0.840641
 
 [node name="Label" type="Label" parent="."]
 texture_filter = 1
-offset_left = 216.0
-offset_top = 85.0
-offset_right = 360.0
-offset_bottom = 108.0
+offset_left = 169.0
+offset_top = 62.0
+offset_right = 5119.0
+offset_bottom = 613.0
+scale = Vector2(0.05, 0.05)
 theme_override_fonts/font = ExtResource("2_8312e")
+theme_override_font_sizes/font_size = 550
 text = "GAME OVER
 "
 
 [node name="endScore2" type="Label" parent="."]
 texture_filter = 1
-offset_left = 216.0
-offset_top = 117.0
-offset_right = 741.0
-offset_bottom = 193.0
-scale = Vector2(0.25, 0.25)
+offset_left = 198.0
+offset_top = 104.0
+offset_right = 2998.0
+offset_bottom = 504.0
+scale = Vector2(0.05, 0.05)
 theme_override_fonts/font = ExtResource("2_8312e")
-theme_override_font_sizes/font_size = 65
+theme_override_font_sizes/font_size = 400
 text = "SCORE: "
 
 [node name="tryAgainButton" type="Button" parent="."]
-offset_left = 223.0
-offset_top = 157.0
-offset_right = 477.0
-offset_bottom = 229.0
-scale = Vector2(0.5, 0.5)
+offset_left = 196.0
+offset_top = 158.0
+offset_right = 3836.0
+offset_bottom = 998.0
+scale = Vector2(0.05, 0.05)
 theme_override_fonts/font = ExtResource("2_8312e")
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 300
 text = "TRY AGAIN"
 
 [node name="exitButton" type="Button" parent="."]
-offset_left = 241.0
-offset_top = 201.0
-offset_right = 423.0
-offset_bottom = 271.0
-scale = Vector2(0.5, 0.5)
+offset_left = 196.0
+offset_top = 238.0
+offset_right = 3836.0
+offset_bottom = 1078.0
+scale = Vector2(0.05, 0.05)
 theme_override_fonts/font = ExtResource("2_8312e")
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 300
 text = "EXIT
 "
 

@@ -92,12 +92,13 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = -11.0
-offset_right = 8.0
-offset_bottom = -11.0
+offset_left = 7.0
+offset_top = -10.0
+offset_right = 7.0
+offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_group_ = true
 
 [node name="ColorRect" type="ColorRect" parent="infoMenu"]
 layout_mode = 0
@@ -133,12 +134,13 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = -12.0
-offset_right = 8.0
-offset_bottom = -12.0
+offset_left = 7.0
+offset_top = -10.0
+offset_right = 7.0
+offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_group_ = true
 
 [node name="ColorRect" type="ColorRect" parent="creditMenu"]
 layout_mode = 0
@@ -180,17 +182,23 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -10.0
+offset_right = 8.0
+offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="bg" type="ColorRect" parent="inputCodeMenu"]
 modulate = Color(1, 1, 1, 0.266667)
 layout_mode = 0
+offset_top = -4.0
 offset_right = 580.0
-offset_bottom = 340.0
+offset_bottom = 356.0
 color = Color(0, 0, 0, 1)
 
 [node name="TextPlaceHolder" type="Sprite2D" parent="inputCodeMenu"]
+texture_filter = 1
 position = Vector2(283, 169)
 texture = ExtResource("12_ulhi5")
 
@@ -231,11 +239,12 @@ color = Color(0, 0, 0, 0.592157)
 texture_filter = 1
 layout_mode = 0
 offset_left = 174.0
-offset_top = 161.0
-offset_right = 389.0
-offset_bottom = 193.0
+offset_top = 160.0
+offset_right = 2314.0
+offset_bottom = 480.0
+scale = Vector2(0.1, 0.1)
 theme_override_fonts/font = ExtResource("19_ak1ii")
-theme_override_font_sizes/font_size = 11
+theme_override_font_sizes/font_size = 100
 placeholder_text = "ENTER YOUR CODE.."
 alignment = 1
 

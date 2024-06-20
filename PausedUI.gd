@@ -10,5 +10,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	scoreLabel.text = "Your Score: \n\n%d" % Global.score
+	scoreLabel.text = "YOUR SCORE: \n\n%d" % Global.score
 	
