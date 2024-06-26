@@ -176,7 +176,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_01niu"]
-size = Vector2(4.49518, 262)
+size = Vector2(4.49518, 268)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a0gg5"]
 size = Vector2(295.469, 5.24923)
@@ -236,7 +236,7 @@ scale = Vector2(0.517579, 0.439453)
 polygon = PackedVector2Array(33, 1, 30, 3, 27, 7, 27, 59, 30, 63, 33, 65, 85, 65, 89, 62, 91, 59, 91, 8, 89, 4, 85, 1)
 
 [node name="gunEndPoint" type="Marker2D" parent="playerCharacter"]
-position = Vector2(25, -2)
+position = Vector2(22, -2)
 scale = Vector2(0.15, 0.15)
 
 [node name="Enemydetect" type="Area2D" parent="playerCharacter"]
@@ -248,7 +248,7 @@ shape = SubResource("RectangleShape2D_j2pk8")
 
 [node name="playerAnim" type="AnimatedSprite2D" parent="playerCharacter"]
 texture_filter = 1
-position = Vector2(3.8147e-06, -1.90735e-06)
+position = Vector2(0.999996, -1.90735e-06)
 rotation = -1.5708
 scale = Vector2(1.01302, 0.896922)
 sprite_frames = SubResource("SpriteFrames_1y75g")
@@ -263,18 +263,17 @@ libraries = {
 position = Vector2(21, 12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="arenaLimit"]
-position = Vector2(-1, 164)
+position = Vector2(-4, 165)
 shape = SubResource("RectangleShape2D_01niu")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="arenaLimit"]
-position = Vector2(528, 163)
+position = Vector2(536, 163)
 shape = SubResource("RectangleShape2D_01niu")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(572, 173)
+position = Vector2(561, 174)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_a0gg5")
 
@@ -369,22 +368,22 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(21, 12)
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="arenaLimitAtasBawah"]
-position = Vector2(135, 26)
+position = Vector2(128, 24)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_01niu")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="arenaLimitAtasBawah"]
-position = Vector2(398, 25.7524)
+position = Vector2(398, 24)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_01niu")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="arenaLimitAtasBawah"]
-position = Vector2(393, 301)
+position = Vector2(396, 304)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_01niu")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="arenaLimitAtasBawah"]
-position = Vector2(135, 301)
+position = Vector2(125, 304)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_01niu")
 

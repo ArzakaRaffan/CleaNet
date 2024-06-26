@@ -5,7 +5,8 @@ const SPEED = 150.0
 
 signal player_dead
 # Speed of rotation smoothing
-const ROTATION_SPEED = 5.5
+const ROTATION_SPEED = 30
+@onready var gun_end_point = $gunEndPoint
 
 @onready var anim_player = $animPlayer
 @onready var shoot_sound = $shootSound
@@ -47,7 +48,7 @@ func _physics_process(delta):
 func shoot():
 	shoot_sound.play()
 	var bullet = bulletPre.instantiate()
-	bullet.global_position = global_position
+	bullet.global_position = gun_end_point.global_position
 	bullet.global_rotation = global_rotation
 	get_parent().add_child(bullet)
 
