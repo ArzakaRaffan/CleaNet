@@ -12,6 +12,14 @@ var can_shoot = true
 signal enemy2Dead
 
 func _physics_process(delta):
+	if Global.score >= 50 and Global.score < 75:
+		SPEED = 50
+	if Global.score >= 75 and Global.score < 100:
+		SPEED = 45
+	if Global.score >= 100 and Global.score < 175:
+		SPEED = 40
+	if Global.score >= 175:
+		SPEED = 35
 	if Global.alive and not is_dying:
 		if player_chase:
 			position += (Global.player.position - position) / SPEED

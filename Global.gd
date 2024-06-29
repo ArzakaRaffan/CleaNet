@@ -7,7 +7,8 @@ var alive
 var highScore
 var can_score
 const HIGHSCORE_FILE = "user://savehighscore.save"
-
+var user_playground_id
+var attempt_id
 
 func _ready():
 	alive = true

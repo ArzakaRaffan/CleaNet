@@ -13,12 +13,15 @@ config_version=5
 config/name="CleaNet"
 run/main_scene="res://main_menu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
-config/icon="res://icon.svg"
+config/icon="res://mainScreenBG/1.png"
 
 [autoload]
 
 Global="*res://Global.gd"
 BgmManager="*res://bgm_manager.gd"
+SHA512="*res://COMPFEST_handler/sha512.gd"
+GlobalGameCodeVerifier="*res://COMPFEST_handler/game_code_verifier_new.gd"
+GlobalGamePointSender="*res://COMPFEST_handler/game_point_sender_new.gd"
 
 [display]
 
@@ -26,6 +29,10 @@ window/size/viewport_width=570
 window/size/viewport_height=340
 window/stretch/mode="viewport"
 window/handheld/orientation=1
+
+[dotnet]
+
+project/assembly_name="CleaNet"
 
 [input]
 

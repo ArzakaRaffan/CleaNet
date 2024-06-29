@@ -17,7 +17,6 @@ func _ready():
 	previous_score = Global.score  # Initialize the previous score
 
 func _process(delta):
-	print(get_viewport().get_mouse_position())
 	# Check if the score has changed
 	if Global.score != previous_score:
 		enemydeath.play()

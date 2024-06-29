@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://d2iu1skasybo4" path="res://press-start/prstart.ttf" id="2_8312e"]
 [ext_resource type="Texture2D" uid="uid://bc3klib8esw4e" path="res://Bg 2.PNG" id="3_pcxj2"]
 [ext_resource type="Texture2D" uid="uid://pesavg42c8g7" path="res://Bg 3.PNG" id="4_1d7bd"]
-[ext_resource type="Texture2D" uid="uid://dula0l6i2ywg6" path="res://Bg 4.PNG" id="5_ongmw"]
+[ext_resource type="Texture2D" uid="uid://bfvejawbqmjeq" path="res://Bg 4.PNG" id="5_ongmw"]
 [ext_resource type="AudioStream" uid="uid://c5ieamidw1cie" path="res://Sound/game over.wav" id="7_i0ekn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8kt8e"]
@@ -41,6 +41,19 @@ autoplay = "default"
 frame = 2
 frame_progress = 0.840641
 
+[node name="Label2" type="Label" parent="."]
+texture_filter = 1
+offset_left = 164.0
+offset_top = 66.0
+offset_right = 5564.0
+offset_bottom = 666.0
+scale = Vector2(0.05, 0.05)
+theme_override_colors/font_color = Color(0.0923971, 0.0923971, 0.0923971, 1)
+theme_override_fonts/font = ExtResource("2_8312e")
+theme_override_font_sizes/font_size = 575
+text = "GAME OVER
+"
+
 [node name="Label" type="Label" parent="."]
 texture_filter = 1
 offset_left = 169.0
@@ -56,20 +69,36 @@ text = "GAME OVER
 [node name="endScore2" type="Label" parent="."]
 texture_filter = 1
 offset_left = 198.0
-offset_top = 104.0
+offset_top = 112.0
 offset_right = 2998.0
-offset_bottom = 504.0
+offset_bottom = 512.0
 scale = Vector2(0.05, 0.05)
 theme_override_fonts/font = ExtResource("2_8312e")
 theme_override_font_sizes/font_size = 400
 text = "SCORE: "
 
+[node name="statusLabel" type="Label" parent="."]
+texture_filter = 1
+offset_left = 152.0
+offset_top = 150.0
+offset_right = 5432.0
+offset_bottom = 550.0
+scale = Vector2(0.05, 0.05)
+theme_override_fonts/font = ExtResource("2_8312e")
+theme_override_font_sizes/font_size = 200
+text = "WAIT..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="tryAgainButton" type="Button" parent="."]
 offset_left = 196.0
-offset_top = 158.0
+offset_top = 177.0
 offset_right = 3836.0
-offset_bottom = 998.0
+offset_bottom = 1017.0
 scale = Vector2(0.05, 0.05)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_8312e")
 theme_override_font_sizes/font_size = 300
 text = "TRY AGAIN"
@@ -80,6 +109,9 @@ offset_top = 238.0
 offset_right = 3836.0
 offset_bottom = 1078.0
 scale = Vector2(0.05, 0.05)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_8312e")
 theme_override_font_sizes/font_size = 300
 text = "EXIT

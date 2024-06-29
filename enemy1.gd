@@ -9,17 +9,17 @@ var is_dying = false
 signal score_changed
 
 func _physics_process(delta):
-	if Global.score > 20 and Global.score <= 30:
+	if Global.score > 20 and Global.score <= 40:
 		SPEED = 35
-	elif Global.score > 30 and Global.score <= 40:
+	elif Global.score > 40 and Global.score <= 60:
 		SPEED = 32.5
-	elif Global.score >40 and Global.score <= 50:
+	elif Global.score >60 and Global.score <= 100:
 		SPEED = 30
-	elif Global.score > 50:
+	elif Global.score > 100 and Global.score <=150:
 		SPEED = 27.5
-	elif Global.score > 100:
+	elif Global.score > 150 and Global.score <= 250:
 		SPEED = 23.75
-	elif Global.score > 150:
+	elif Global.score > 250:
 		SPEED = 20.00
 	if Global.alive and not is_dying:
 		if player_chase:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dspoo4djit734"]
+[gd_scene load_steps=23 format=3 uid="uid://diyfbf6v0ywpd"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_8t0h5"]
 [ext_resource type="Texture2D" uid="uid://bge3jfwc12h65" path="res://mainScreenBG/1.png" id="1_xp8if"]
@@ -205,12 +205,13 @@ texture = ExtResource("12_ulhi5")
 [node name="verifButton" type="TextureButton" parent="inputCodeMenu"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 219.0
-offset_top = 223.0
-offset_right = 346.0
-offset_bottom = 266.0
+offset_left = 220.0
+offset_top = 196.0
+offset_right = 347.0
+offset_bottom = 239.0
 texture_normal = ExtResource("18_lb5lj")
 texture_pressed = ExtResource("19_3nluc")
+texture_disabled = ExtResource("19_3nluc")
 
 [node name="inputCloseButton" type="TextureButton" parent="inputCodeMenu"]
 texture_filter = 1
@@ -248,19 +249,34 @@ theme_override_font_sizes/font_size = 100
 placeholder_text = "ENTER YOUR CODE.."
 alignment = 1
 
+[node name="startGameButton" type="TextureButton" parent="inputCodeMenu"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 246.0
+offset_top = 244.0
+offset_right = 326.0
+offset_bottom = 271.0
+scale = Vector2(0.85, 0.85)
+disabled = true
+texture_normal = ExtResource("11_kja3o")
+texture_pressed = ExtResource("10_brktn")
+texture_disabled = ExtResource("10_brktn")
+
 [node name="errorLabel" type="Label" parent="inputCodeMenu"]
 visible = false
 texture_filter = 1
 layout_mode = 0
-offset_left = 194.0
-offset_top = 205.0
-offset_right = 914.0
-offset_bottom = 266.0
+offset_left = 193.0
+offset_top = 137.0
+offset_right = 913.0
+offset_bottom = 198.0
 scale = Vector2(0.25, 0.25)
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("19_ak1ii")
 theme_override_font_sizes/font_size = 60
 text = "INVALID CODE"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="infoButton" to="." method="_on_info_button_pressed"]
 [connection signal="pressed" from="htpButton" to="." method="_on_htp_button_pressed"]
@@ -269,3 +285,4 @@ text = "INVALID CODE"
 [connection signal="pressed" from="creditMenu/creditClose" to="." method="_on_credit_close_pressed"]
 [connection signal="pressed" from="inputCodeMenu/verifButton" to="." method="_on_verif_button_pressed"]
 [connection signal="pressed" from="inputCodeMenu/inputCloseButton" to="." method="_on_input_close_button_pressed"]
+[connection signal="pressed" from="inputCodeMenu/startGameButton" to="." method="_on_start_game_button_pressed"]
